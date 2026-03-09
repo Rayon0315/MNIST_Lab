@@ -22,7 +22,7 @@ test_ds = MNIST('../data', train=False, download=True, transform=transform)
 train_loader = DataLoader(train_ds, batch_size=64, shuffle=True)
 test_loader = DataLoader(test_ds, batch_size=64)
 
-modelType = 'resnet'
+modelType = 'lenet5'
 model = get_model(modelType).to(device)
 
 loss_fn = nn.CrossEntropyLoss()
