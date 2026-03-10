@@ -22,11 +22,12 @@ test_ds = MNIST('../data', train=False, download=True, transform=transform)
 train_loader = DataLoader(train_ds, batch_size=64, shuffle=True)
 test_loader = DataLoader(test_ds, batch_size=64)
 
-modelType = 'lenet5'
+modelType = 'vgg'
 model = get_model(modelType).to(device)
 
 loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.0049)
+# optimizer = torch.optim.SGD(model.parameters(), lr=0.0049)
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
 # 创建并打开一个CSV文件，写入模型训练结果
 csv_filename = f'../result/{modelType}_result.csv'

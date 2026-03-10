@@ -3,12 +3,18 @@ from .mlp import MLP
 from .cnn import SimpleCNN
 from .lenet5 import LeNet5
 from .resnet import ResNet
+from .deepcnn import DeepCNN
+from .vgg import VGG
+from .mobilenet import MobileNet
 
 MODEL_REGISTRY = {
     "mlp" : MLP,
     "cnn" : SimpleCNN,
     "lenet5" : LeNet5,
-    "resnet" : ResNet
+    "resnet" : ResNet,
+    "deepcnn" : DeepCNN,
+    "vgg" : VGG,
+    "mobilenet" : MobileNet
 }
 
 def get_model(name : str):
